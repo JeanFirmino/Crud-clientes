@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Seja bem vindo caro usuário!</h1>
+
+<h1> <b>Esse é um trabalho para avaliação em um estágio :)</b> </h1>
+<p>Vejo que uma das caracteristicas mais marcante que vou absorver no estágio será:</p>
+    <ul>
+        {% for desejo in desejos %}
+            <li>{{ desejo }}</li>
+        {% endfor %}
+    </ul>
+<p>Agora é {{agora}}</p>
+</body>
+</html>
