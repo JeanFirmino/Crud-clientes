@@ -13,9 +13,9 @@
         <p> Nome - Data de nascimento - Endereço - telefone - observações -  Data de Cadastro</p>
         <ol>
         {% for categoria  in categorias %}
-            <li><a href="{% url'url_update' categoria.id %}"></a></li>
+            <li><a href="{% url 'url_update' categoria.id %}"></a></li>
         {% endfor %}
         </ol>
-<a href="{% url'novo' %}">NOVO</a>
+<a href="{% url 'novo' %}">NOVO</a>
 </body>
 </html>

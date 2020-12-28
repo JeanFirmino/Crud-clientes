@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from .models import categorias
 from .form import categoriasform
 import datetime
-import django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
 
 # Create your views here.
 
