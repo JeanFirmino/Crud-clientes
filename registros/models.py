@@ -1,5 +1,6 @@
 from django.db import models
 from phone_field import PhoneField
+
 # Create your models here.
 class categorias(models.Model):
     nome = models.CharField(max_length=150, help_text='O seu nome completo')

@@ -18,5 +18,9 @@
         {% endfor %}
     </ul>
 <p>Agora é {{agora}}</p>
+
+<a href="{% url 'novo' categorias.id %}">Novo cadastro</a>
+
+<a href="{% url 'home' categorias.id %}">Lista de cadastrados</a>
 </body>
 </html>
