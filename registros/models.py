@@ -14,3 +14,4 @@ class categorias(models.Model):
     def __str__(self):
         return self.nome
     #para eliminar o categoria object na tela e apresentar o nome do cadastrado
+

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '$u057u6+#ka19uje=!92sb)(&rx7cd&@jm-9!$(tz5ar2(jm#b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # Não precisa deixar o debug ativado quando o trabalho estiver ativado ao público.
 
 ALLOWED_HOSTS = []

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import categorias
 from .form import categoriasform
 import datetime
-
+from django.views.generic import UpdateView
 # Create your views here.
 
 def home(request):
@@ -26,18 +26,12 @@ def novo_dado(request):
     data['form'] = form
     return render(request, 'registros/form.html', data)
 
-def update(request, pk):
-    data = {}
-    Categorias = categorias.objects.filter(pk=pk)
-    form = categoriasform(request.POST or None, instance=Categorias)
-    if form.is_valid():
-        form.save()
-        return redirect('url_listagem')
-    data['form'] = form
-    data['categorias'] = categorias
-    return render(request, 'registros/form.html', data)
-
 def delete(request, pk):
     Categorias = categorias.objects.filter(pk=pk)
     Categorias.delete()
     return redirect('url_listagem')
+
+class ClienteUpdateView(UpdateView):
+    form_update ='registros/form_update.html'
+    model = categorias
+    fields = '__all__'
