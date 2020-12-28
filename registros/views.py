@@ -3,6 +3,7 @@ from .models import categorias
 from .form import categoriasform
 import datetime
 from django.views.generic import UpdateView
+from django.urls import reverse_lazy
 # Create your views here.
 
 def home(request):
@@ -32,6 +33,7 @@ def delete(request, pk):
     return redirect('url_listagem')
 
 class ClienteUpdateView(UpdateView):
-    form_update ='registros/form_update.html'
+    categorias_form ='registros/categorias_form.html'
     model = categorias
     fields = '__all__'
+    success_url = reverse_lazy("url_listagem")
