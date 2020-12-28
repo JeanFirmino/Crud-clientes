@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import categorias
 from .form import categoriasform
 import datetime
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, CreateView
 from django.urls import reverse_lazy
 # Create your views here.
 
@@ -18,22 +18,18 @@ def listagem(request):
     data['categorias'] = categorias.objects.all()
     return render(request, 'registros/listagem.html', data)
 
-def novo_dado(request):
-    data = {}
-    form = categoriasform(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('url_listagem')
-    data['form'] = form
-    return render(request, 'registros/form.html', data)
+class categoriasCreateView(CreateView):
+    model = categorias
+    fields = '__all__'
+    success_url = reverse_lazy("registros:listagem.html")
 
 def delete(request, pk):
     Categorias = categorias.objects.filter(pk=pk)
     Categorias.delete()
     return redirect('url_listagem')
 
-class ClienteUpdateView(UpdateView):
-    categorias_form ='registros/categorias_form.html'
+class categoriasUpdateView(UpdateView):
+    form_update ='registros/form_update.html'
     model = categorias
     fields = '__all__'
-    success_url = reverse_lazy("url_listagem")
+    success_url = reverse_lazy("registros:listagem.html")
