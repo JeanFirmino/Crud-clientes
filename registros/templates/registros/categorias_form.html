@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+    <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit"> Salvar </button>
+    <button type="submit">Salvar</button>
+    </form>
     {% if categorias %}
         <a href="{% url 'url_delete' categorias.id %}">Remover</a>
     {% endif %}

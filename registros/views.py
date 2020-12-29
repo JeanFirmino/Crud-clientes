@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import categorias
 from .form import categoriasform
 import datetime
-from django.views.generic import UpdateView, CreateView
+from django.views.generic import UpdateView, CreateView, ListView
 from django.urls import reverse_lazy
 # Create your views here.
 
@@ -13,10 +13,10 @@ def home(request):
 
     return render(request, 'registros/home.html', data)
 
-def listagem(request):
-    data = {}
-    data['categorias'] = categorias.objects.all()
-    return render(request, 'registros/listagem.html', data)
+class categoriasListView(ListView):
+    model = categorias
+    success_url = reverse_lazy("url_listagem")
+
 
 class categoriasCreateView(CreateView):
     model = categorias
