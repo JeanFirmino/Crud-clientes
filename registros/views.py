@@ -21,7 +21,7 @@ def listagem(request):
 class categoriasCreateView(CreateView):
     model = categorias
     fields = '__all__'
-    success_url = reverse_lazy("registros:listagem.html")
+    success_url = reverse_lazy("url_listagem")
 
 def delete(request, pk):
     Categorias = categorias.objects.filter(pk=pk)
@@ -29,7 +29,7 @@ def delete(request, pk):
     return redirect('url_listagem')
 
 class categoriasUpdateView(UpdateView):
-    form_update ='registros/form_update.html'
     model = categorias
     fields = '__all__'
-    success_url = reverse_lazy("registros:listagem.html")
+    success_url = reverse_lazy("url_listagem")
+

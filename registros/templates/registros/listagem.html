@@ -9,13 +9,12 @@
 </head>
 <body>
 <h2>Listagem</h2>
-<li> Nomes </li>
-        <p> Nome - Data de nascimento - Endereço - telefone - observações -  Data de Cadastro</p>
+<li> Nome - Data de nascimento - Endereço - telefone - observações -  Data de Cadastro </li>
         <ol>
         {% for categoria  in categorias %}
             <li><a href="{% url 'url_update' categoria.id %}"> {{ categoria.nome }} - {{ categoria.data_nascimento }} - {{ categoria.endereco }} - {{ categoria.telefone }} - {{ categoria.observacoes }} - {{ categoria.data_cadastro }}</a></li>
         {% endfor %}
         </ol>
-<a href="{% url 'novo' %}">NOVO</a>
+<a href="{% url 'url_novo' %}">NOVO CADASTRO</a>
 </body>
 </html>
