@@ -1,13 +1,18 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}GS registro{% endblock %}</title>
+
+    <meta name="description" content="Página registro">
+    <meta name="author" content="Firmino">
+
 </head>
 <body>
+
 <h1>Seja bem vindo caro usuário!</h1>
 
 <h1> <b>Esse é um trabalho para avaliação em um estágio :)</b> </h1>
@@ -18,7 +23,38 @@
         {% endfor %}
     </ul>
 <p>Agora é {{agora}}</p>
-<a href="{% url 'url_novo' %}">Novo cadastro</a>
-<a href="{% url 'url_listagem' %}">Lista de cadastrados</a>
+
+<nav>
+    <div id="navbarNav">
+        <ul>
+            <li>
+                <a href="{% url 'url_novo' %}">Novo cadastro</a>
+            </li>
+            <li>
+                <a href="{% url 'url_listagem' %}">Lista de cadastrados</a>
+            </li>
+        </ul>
+    </div>
+    {% if user.is_authenticated %}
+        <ul>
+
+            <li>
+                <p>
+                    Usuário: {{ user.first_name }}
+                </p>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}">Sair</a>
+            </li>
+
+        </ul>
+
+    {% else %}
+        <a href="{% url 'login' %}">Entrar</a>
+    {% endif %}
+</nav>
+<div>
+{% block main %}{% endblock %}
+</div>
 </body>
 </html>
