@@ -8,13 +8,13 @@ virtual a partir do próprio python pelo cmd do windows. Os arquivos estáticos 
 (lembrando que é necessário instalar o python primeiro)
 
 # Ambiente Virtual
-Para criar o ambiente virtual em sua máquina windows (e assim poder rodar o projeto da mesma maneira que fiz), basta entrar no cmd e digitar...
+Para criar o ambiente virtual em sua máquina windows (e assim poder rodar o projeto da mesma maneira que fiz), basta entrar no cmd e digitar...\n
 `py -m pip --version`
-Para atualizar o pip, depois;
+Para atualizar o pip, depois;\n
 `py -m pip install --user virtualenv`
-Para instalar um ambiente virtual, depois;
+Para instalar um ambiente virtual, depois;\n
 `py -m venv env`
-Para criar uma máquina virtual. Pronto, máquina virtual criada!
+Para criar uma máquina virtual. Pronto, máquina virtual criada!\n
 
 # Ativando a máquina virtual
 `.\env\Scripts\activate`
